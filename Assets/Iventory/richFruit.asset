@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc80b7c78239ad44bbff6801841dba5, type: 3}
+  m_Name: richFruit
+  m_EditorClassIdentifier: 
+  itemName: "\u91D1\u94B1\u679C"
+  ItemSprite: {fileID: 7207882119082248946, guid: 462062fa27f47554bb18e63380fd3b9a, type: 3}
+  basicPrice: 100
+  itemHeld: 0
+  itemInfo: "\u957F\u5F97\u5F88\u7279\u522B\u7684\u679C\u90FD\u80FD\u5356\u5F88\u591A\u94B1\u3002"

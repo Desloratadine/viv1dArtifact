@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc80b7c78239ad44bbff6801841dba5, type: 3}
+  m_Name: blackhat
+  m_EditorClassIdentifier: 
+  itemName: "\u9ED1\u8272\u7684\u5E3D\u5B50"
+  ItemSprite: {fileID: 5292716684467120071, guid: c7f6d155a695e2c42a34861b3ad65825, type: 3}
+  basicPrice: 30
+  itemHeld: 0
+  itemInfo: "\u9ED1\u8272\u5E3D\u5B50\uFF0C\u6709\u5F88\u591A\u7F1D\u7F1D\u8865\u8865\u7684\u75D5\u8FF9\uFF0C\u4F46\u662F\u4E0D\u4ED4\u7EC6\u770B\u662F\u53D1\u73B0\u4E0D\u4E86\u7684\u3002"
