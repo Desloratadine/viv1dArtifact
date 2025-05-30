@@ -1,0 +1,7 @@
+local dialogue={
+    {name = "A",text = "这是一个东西啊啊啊啊啊啊"},
+    {name = "B",text = "11111"},
+    {name = "A",text = "第三条"}
+
+}
+return dialogue

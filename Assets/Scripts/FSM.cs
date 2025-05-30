@@ -147,6 +147,24 @@ public class FSM : MonoBehaviour
     {
         //GetComponentInChildren<Image>().fillAmount = Parameter.currentHP / Parameter.maxHP;
     }
+    public bool IsInScreen()
+    {
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+
+        //把指定物体的坐标转化为窗口坐标
+        Vector3 dir = (Camera.main.transform.position - viewPos).normalized;
+        //计算摄像机和物体的距离
+        float dot = Vector3.Dot(Camera.main.transform.forward, dir);
+        //计算点乘
+        return dot > 0 && viewPos.x > 0 && viewPos.x < 1 && viewPos.y > 0 && viewPos.y < 1;
+    }
+    public bool canFollow()
+    {
+        //射线检测怪物和角色之间有没有草丛
+        bool result;
+        result = Physics.Raycast(transform.position, character.transform.position, 1000f, LayerMask.NameToLayer("trees"));
+        return result;
+    }
 }
 
 

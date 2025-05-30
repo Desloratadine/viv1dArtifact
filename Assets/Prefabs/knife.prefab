@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba484a1b0e7bec044af4b71db9f5e9f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestory: 0
 --- !u!50 &5386667172295249593
 Rigidbody2D:
   serializedVersion: 4
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tool:
     hurt: 2
+    cooltme: 0.6
   parameter:
     animator: {fileID: 0}
     CurrentTool: {fileID: 0}
@@ -146,6 +148,7 @@ MonoBehaviour:
     camera: {fileID: 0}
     attackArea: 0
     character: {fileID: 0}
+    CD: {fileID: 0}
   FSM: {fileID: 0}
   target: {fileID: 0}
   constant: 0
@@ -153,6 +156,7 @@ MonoBehaviour:
   cat: {fileID: 2639218533254225182, guid: 7271196a4908c47418b29b751324053c, type: 3}
   bag: {fileID: 0}
   bonus: 1
+  CD: {fileID: 0}
 --- !u!82 &-4965921111543533682
 AudioSource:
   m_ObjectHideFlags: 0
@@ -321,7 +325,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1044475877
-  m_SortingLayer: 5
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 8947374543119380961, guid: d8f955eb8c1228d49b94ff98e2e25561, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5147,7 +5151,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1044475877
-  m_SortingLayer: 5
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0

@@ -29,8 +29,8 @@ public class CharacterController : MonoBehaviour
     private Camera Camera;
 
     public GameObject cat;
-    private Rigidbody2D rb;
-    private Animator animator;
+    public Rigidbody2D rb;
+    public Animator animator;
 
     public GameObject Bag;//玩家的背包
     public bool isOpen;
@@ -45,13 +45,13 @@ public class CharacterController : MonoBehaviour
 
     private float y_delay = 0f;
 
-    private bool isDashing = false;
+    public bool isDashing = false;
 
     void Start()
     {
         hp.Image = hp.HP.GetComponent<Image>();
 
-        rb = GetComponent<Rigidbody2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
 
         animator = GetComponent<Animator>();
 
@@ -65,33 +65,37 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
-
+        
+        OpenSet();
+        MoveMent();
         if(hp.health <= 0)
         {
             SceneManager.LoadScene("be");
             Timer.i = 0;
         }
-        OpenSet();
+        //hp.Image.fillAmount = hp.health / hp.maxHP;
 
+
+        if (inpoision) poision();
+    }
+    //移动+动画
+    private void MoveMent()
+    {
         //基础的四向行走
         //当按下shift键，正在冲刺，移动速度增加；松开后恢复原来的速度
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift)&&rb.velocity!=Vector2.zero)
         {
             isDashing = true;
-            speed = 7f;
+            StartCoroutine(rush());
         }
+        if(isDashing)  return;
 
-        else if (isDashing && Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            isDashing = false;
-            speed = 4.5f;
-        }
 
         var xspeed = Input.GetAxisRaw("Horizontal");
 
         var yspeed = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector2(xspeed, yspeed) * speed;
+        rb.velocity = new Vector2(xspeed, yspeed).normalized * speed;
 
 
 
@@ -118,16 +122,17 @@ public class CharacterController : MonoBehaviour
         }
         else
             iswalking = false;
-        walkplay();
         
-
-        hp.Image.fillAmount = hp.health / hp.maxHP;
-
-
-        if (inpoision) poision();
+        walkplay();
     }
-
-
+    private IEnumerator rush()
+    {
+        rb.AddForce(.03f*rb.velocity.normalized);
+        gameObject.GetComponentInChildren<ParticleSystem>().Play();
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+        isDashing = false;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -182,7 +187,7 @@ public class CharacterController : MonoBehaviour
     {
         if (iswalking)
         {
-            if(!walksound.isPlaying)
+            if(!walksound.isPlaying&&walksound.clip)
             walksound.Play();
         }
         else

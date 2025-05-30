@@ -26,6 +26,8 @@ public class Tools
     //ÎäÆ÷µÄ¹¥»÷·¶Î§
     public float attackArea;
     public GameObject character;
+    //
+    public GameObject CD;
 }
 
 public class CharacterState : MonoBehaviour
@@ -38,8 +40,8 @@ public class CharacterState : MonoBehaviour
     void Start()
     {
         
-            ATKstates.Add(AttackType.chainsaw, new chainsawState(this));
-        ATKstates.Add(AttackType.knife, new knifeState(this));
+            ATKstates.Add(AttackType.chainsaw, new ChainsawState(this));
+        ATKstates.Add(AttackType.knife, new KnifeState(this));
         ATKstates.Add(AttackType.handsaw, new handsawState(this));
         ATKstates.Add(AttackType.bottle, new bottleState(this));
         ATKstates.Add(AttackType.exit, new exitState(this));

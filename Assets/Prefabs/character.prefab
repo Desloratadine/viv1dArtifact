@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8601721496499891673
 Transform:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7145198348311737387, guid: d74b5cff2e17b5f40bd24dddcfb6641b, type: 3}
+  m_Sprite: {fileID: 7145198348311737387, guid: 71950d72345b6f7489e27201ad65d266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -286,12 +286,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c859a638092ea947bf72c6babc4be93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp:
+    hurt: 0
+    health: 0
+    maxHP: 0
+    Image: {fileID: 0}
+    HP: {fileID: 0}
   MainCamera: {fileID: 0}
+  inpoision: 0
   cat: {fileID: 2639218533254225182}
+  Bag: {fileID: 0}
+  isOpen: 0
+  set: {fileID: 0}
+  walksound: {fileID: 0}
   speed: 3
-  bottle: {fileID: 4787702858891840072, guid: a0fe49501cca7ed43ade39717abaa0a0, type: 3}
-  bottleposition: {fileID: 6833560296989664961}
-  force: 15
 --- !u!212 &7358647962558164949
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -341,7 +349,7 @@ SpriteRenderer:
   m_Size: {x: 0.75, y: 0.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3850174617502648598
@@ -401,6 +409,7 @@ MonoBehaviour:
     camera: {fileID: 0}
     attackArea: 0
     character: {fileID: 0}
+    CD: {fileID: 0}
 --- !u!1 &6833560296989664961
 GameObject:
   m_ObjectHideFlags: 0

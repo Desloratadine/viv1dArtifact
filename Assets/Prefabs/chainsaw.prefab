@@ -234,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tool:
     hurt: 1.5
+    cooltme: 15
   parameter:
     animator: {fileID: 0}
     CurrentTool: {fileID: 0}
@@ -243,6 +244,7 @@ MonoBehaviour:
     camera: {fileID: 0}
     attackArea: 0
     character: {fileID: 0}
+    CD: {fileID: 0}
   FSM: {fileID: 0}
   target: {fileID: 0}
   constant: 0
@@ -250,6 +252,7 @@ MonoBehaviour:
   cat: {fileID: 0}
   bag: {fileID: 0}
   bonus: 1
+  CD: {fileID: 0}
 --- !u!1 &5029395017510565968
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +468,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1044475877
-  m_SortingLayer: 5
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 6870865582317446321, guid: d8f955eb8c1228d49b94ff98e2e25561, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11fddd94e112e1048b9a57d5123cc492, type: 3}
+  m_Name: flowerbag
+  m_EditorClassIdentifier: 
+  bagList:
+  - Card: {fileID: 11400000, guid: 78b4daee8f05c9e42a368a0a315ea463, type: 2}
+    Bind: 1
+    Exchangeable: 0
+    Lock: 1
+  - Card: {fileID: 11400000, guid: c4746396f2ea48247bfb785e53d113a7, type: 2}
+    Bind: 1
+    Exchangeable: 1
+    Lock: 1
+  - Card: {fileID: 11400000, guid: 9bc4597671807424cbde0d8ba64a336b, type: 2}
+    Bind: 1
+    Exchangeable: 0
+    Lock: 1

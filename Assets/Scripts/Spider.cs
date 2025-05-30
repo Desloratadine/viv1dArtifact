@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 /// <summary>
 /// 在dile停留resttime后，进入spwalk
@@ -11,6 +12,8 @@ public class SPidle : Enemy
     private Parameter parameter;
     private float timer = 0f;
     private float rest = 3f;
+        Vector2 LeftDowm = Camera.main.ViewportToWorldPoint(new Vector2(0.1f, 0.8f));//左下
+        Vector2 RightUp = Camera.main.ViewportToWorldPoint(new Vector2(0.9f, 0.95f));//右上
 
     public SPidle(FSM manager)
     {
@@ -21,6 +24,7 @@ public class SPidle : Enemy
     public void onEnter()
     {
         parameter.animator.Play("sp-idle");
+
     }
 
     public void onExit()
@@ -30,8 +34,10 @@ public class SPidle : Enemy
 
     public void onUpdate()
     {
+
         timer += Time.deltaTime;
-        if(timer >= rest)
+        if(manager.IsInScreen()) manager.TransState(StateType.walk);
+        if ((timer >= rest))
         {
             manager.TransState(StateType.walk);
         }
@@ -43,6 +49,7 @@ public class SPidle : Enemy
 /// 得到范围的临界xy，用随机数生成一个new vector2，然后用movetowards移动
 /// 边缘用摄像机的范围坐标，左下00
 /// 移动到点之后，进入idle
+/// 如果离开了范围，强制刷新
 /// </summary>
 public class SPwalk : Enemy
 {
@@ -74,8 +81,14 @@ public class SPwalk : Enemy
 
     public void onUpdate()
     {
-       
-        
+         
+
+        //if ((manager.transform.position.x > LeftDowm.x) || (manager.transform.position.x > RightUp.x)
+        //    || (manager.transform.position.y > RightUp.y) || (manager.transform.position.y < LeftDowm.y))
+        //{
+        //    manager.TransState(StateType.walk);
+        //}
+
         manager.transform.position = Vector2.MoveTowards(manager.transform.position, new Vector2(patrol.x,patrol.y), parameter.speed * Time.deltaTime);
         if((manager.transform.position.x == patrol.x)&&(manager.transform.position.y==patrol.y))
         manager.TransState(StateType.attack);

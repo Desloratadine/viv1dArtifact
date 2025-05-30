@@ -35,7 +35,7 @@ public class idleState : Enemy
 
     public void onUpdate()
     {
-        if (parameter.target != null)
+        if ((parameter.target != null))
         {
             manager.TransState(StateType.chase);
         }

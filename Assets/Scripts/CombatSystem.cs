@@ -12,6 +12,7 @@ public class tools
 {
     private GameObject tool;
     public float hurt;
+    public float cooltme;
 }
 
 /// <summary>
@@ -32,11 +33,14 @@ public class CombatSystem : MonoBehaviour
     public bag bag;
     public float bonus = 1f;    //用来实现毒果的效果
 
+    public GameObject CD;
+
     void Start()
     {
         bag = GameObject.FindWithTag("Player").GetComponent<bag>();
         _tool.hurt *= bag.usepoision;
         Debug.Log("现在的攻击力是"+_tool.hurt);
+        CD = GameObject.FindWithTag("cd");
  
     }
 

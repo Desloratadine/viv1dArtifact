@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797cc3f0eca24784f9e8eeeb7505c17e, type: 3}
+  m_Name: UIControl
+  m_EditorClassIdentifier: Assembly-CSharp::UIControl
+  UIList:
+  - name: "\u5192\u6CE1"
+    prefab: {fileID: 5812252002179975724, guid: 66f04306d7c712d44b534810d979187f, type: 3}
+  - name: "\u6587\u672C\u63CF\u8FF0"
+    prefab: {fileID: 7134177186409628906, guid: 9a8b57a397ce01d4286aaf16239d8301, type: 3}
+  - name: "\u80CC\u5305"
+    prefab: {fileID: 1505227345815669312, guid: 1c5d82a5f99957a49b7e9642c702b7c1, type: 3}
+  - name: "\u6587\u672C\u63CF\u8FF0"
+    prefab: {fileID: 7134177186409628906, guid: 9a8b57a397ce01d4286aaf16239d8301, type: 3}
+  - name: "\u6587\u672C\u80CC\u666F\u6846"
+    prefab: {fileID: 4892882639259797509, guid: f3723d836c8c7524ba38e168ade64ef4, type: 3}
+  - name: "\u5BF9\u8BDD\u6846"
+    prefab: {fileID: 6381783112173920136, guid: c30aea590ef9ff8419e5171cb6c0ab8e, type: 3}
+  - name: "\u5B9D\u7BB1\u80CC\u5305"
+    prefab: {fileID: 6485188667376637536, guid: 221a83d9dbb2ce4488110ab30fe198c2, type: 3}
+  - name: "\u73A9\u5BB6\u80CC\u5305"
+    prefab: {fileID: 3058128597023644501, guid: 50390bf25d9e66e4eaaa0f09ae09bfd9, type: 3}

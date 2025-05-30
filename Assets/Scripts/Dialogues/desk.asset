@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3805771915847051820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910f3798056e7d446ba8d3b63e91e462, type: 3}
+  m_Name: Content
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -328, y: -56}
+  ports:
+    keys:
+    - In
+    - Out
+    values:
+    - _fieldName: In
+      _node: {fileID: -3805771915847051820}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: -3805771915847051820}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Info: "\u8FD9\u91CC\u586B\u5173\u4E8E\u5BF9\u8BDD\u5185\u5BB9\u7684\u6CE8\u91CA"
+  DialogueFile: {fileID: 4900000, guid: 07b3960e0779fc948ae5e6fceab44712, type: 3}
+  In: 0
+  Out: 0
+  Dialogues:
+  - "A:\u6D4B\u8BD5\u6D4B\u8BD5\u6D4B\u8BD5"
+  - "B:abcd\u55EF\u55EF\u55EF\u989D"
+  - "A:\u5E8A\u524D\u660E\u6708\u5149"
+  - "B:\u7591\u4F3C\u5730\u4E0A\u971C"
+  - "A:\u4E3E\u5934\u671B\u660E\u6708"
+  - "B:\u4F4E\u5934\u601D\u6545\u4E61"
+--- !u!114 &-933615583102950459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3729ef22678389469af84a632b42a8f, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -576.57544, y: -125.97892}
+  ports:
+    keys:
+    - Out
+    values:
+    - _fieldName: Out
+      _node: {fileID: -933615583102950459}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: In
+        node: {fileID: 8348140322492190539}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Out: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8162fa2fc08b7c7449b474d7f23fa9dd, type: 3}
+  m_Name: desk
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -3805771915847051820}
+  - {fileID: 8348140322492190539}
+  - {fileID: -933615583102950459}
+--- !u!114 &8348140322492190539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910f3798056e7d446ba8d3b63e91e462, type: 3}
+  m_Name: Content
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 24, y: -200}
+  ports:
+    keys:
+    - In
+    - Out
+    values:
+    - _fieldName: In
+      _node: {fileID: 8348140322492190539}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Out
+        node: {fileID: -933615583102950459}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: 8348140322492190539}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Info: "\u8FD9\u91CC\u586B\u5173\u4E8E\u5BF9\u8BDD\u5185\u5BB9\u7684\u6CE8\u91CA"
+  DialogueFile: {fileID: 4900000, guid: 8d39ed3385a7cc44cb92d70ff2d3c488, type: 3}
+  In: 0
+  Out: 0
+  Dialogues:
+  - "A:\u8FD9\u662F\u4E00\u4E2A\u4E1C\u897F\u554A\u554A\u554A\u554A\u554A\u554A"
+  - B:11111
+  - "A:\u7B2C\u4E09\u6761"

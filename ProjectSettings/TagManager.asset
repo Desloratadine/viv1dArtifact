@@ -17,6 +17,11 @@ TagManager:
   - bluebee
   - bullet
   - bgm
+  - cd
+  - UI
+  - web
+  - cube
+  - Interactive
   layers:
   - Default
   - TransparentFX
@@ -31,7 +36,7 @@ TagManager:
   - enemyattack
   - tools
   - slot
-  - 
+  - grass
   - 
   - 
   - 
@@ -57,6 +62,9 @@ TagManager:
   - name: player
     uniqueID: 1998117985
     locked: 0
+  - name: tools
+    uniqueID: 1044475877
+    locked: 0
   - name: trees
     uniqueID: 978968439
     locked: 0
@@ -66,6 +74,6 @@ TagManager:
   - name: UI
     uniqueID: 807644539
     locked: 0
-  - name: tools
-    uniqueID: 1044475877
+  - name: enemy
+    uniqueID: 1399273895
     locked: 0

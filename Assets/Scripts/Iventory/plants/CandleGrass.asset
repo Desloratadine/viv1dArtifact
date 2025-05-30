@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc80b7c78239ad44bbff6801841dba5, type: 3}
+  m_Name: CandleGrass
+  m_EditorClassIdentifier: 
+  itemName: "\u8721\u70DB\u82B1"
+  itemInfo: "\u50CF\u8721\u70DB"
+  ItemSprite: {fileID: 0}
+  basicPrice: 0
+  StatesInfo:
+  - stateName: 2
+    stateSprite: {fileID: -3727567362881163490, guid: 248ada6b7a7aa1743afb8994144b5667, type: 3}
+  - stateName: 0
+    stateSprite: {fileID: -3598477421149377984, guid: 248ada6b7a7aa1743afb8994144b5667, type: 3}
+  - stateName: 1
+    stateSprite: {fileID: -2061459469599875542, guid: 248ada6b7a7aa1743afb8994144b5667, type: 3}
+  itemHeld: 1
