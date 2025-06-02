@@ -21,3 +21,7 @@ MonoBehaviour:
     Bind: 1
     Exchangeable: 1
     Lock: 0
+  - Card: {fileID: 11400000, guid: 9bc4597671807424cbde0d8ba64a336b, type: 2}
+    Bind: 1
+    Exchangeable: 0
+    Lock: 0

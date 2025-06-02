@@ -24,10 +24,8 @@ public class Reach_show : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))        
         {
             GameObject blank = UIElementManager._instance.GetUIElement("对话框");
-            blank.GetComponentInChildren<DialogManager>().ReceiveNPC(NPCname);
+            blank.GetComponentInChildren<DialogManager>().ReceiveNPC(NPCname);//对话事件入口
             ChangeImagestate(true);
-
-
         }
     }
 
@@ -54,7 +52,6 @@ public class Reach_show : MonoBehaviour
             GameObject bag = UIElementManager._instance.GetUIElement("宝箱背包");
             bag.SetActive(flag);
             bag.transform.Find("slot/empty_slot").GetComponent<IventoryMannage>().UpdateBag(Bag.GetBag());
-
         }
 
         SwitchTo2ndUI.instance.canSwitchTo2nd = flag;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Content
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -328, y: -56}
+  position: {x: 88, y: -72}
   ports:
     keys:
     - In
@@ -23,7 +23,10 @@ MonoBehaviour:
       _node: {fileID: -3805771915847051820}
       _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Out
+        node: {fileID: 8348140322492190539}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -42,12 +45,12 @@ MonoBehaviour:
   In: 0
   Out: 0
   Dialogues:
-  - "A:\u6D4B\u8BD5\u6D4B\u8BD5\u6D4B\u8BD5"
-  - "B:abcd\u55EF\u55EF\u55EF\u989D"
-  - "A:\u5E8A\u524D\u660E\u6708\u5149"
-  - "B:\u7591\u4F3C\u5730\u4E0A\u971C"
-  - "A:\u4E3E\u5934\u671B\u660E\u6708"
-  - "B:\u4F4E\u5934\u601D\u6545\u4E61"
+  - "A:charactertest_0:\u6D4B\u8BD5\u6D4B\u8BD5\u6D4B\u8BD5"
+  - "B:charactertest_0:abcd\u55EF\u55EF\u55EF\u989D"
+  - "A:charactertest_1:\u5E8A\u524D\u660E\u6708\u5149"
+  - "B:charactertest_2:\u7591\u4F3C\u5730\u4E0A\u971C"
+  - "A:charactertest_1:\u4E3E\u5934\u671B\u660E\u6708"
+  - "B:charactertest_0:\u4F4E\u5934\u601D\u6545\u4E61"
 --- !u!114 &-933615583102950459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +111,7 @@ MonoBehaviour:
   m_Name: Content
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 24, y: -200}
+  position: {x: -232, y: -72}
   ports:
     keys:
     - In
@@ -130,7 +133,10 @@ MonoBehaviour:
       _node: {fileID: 8348140322492190539}
       _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: In
+        node: {fileID: -3805771915847051820}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -140,6 +146,6 @@ MonoBehaviour:
   In: 0
   Out: 0
   Dialogues:
-  - "A:\u8FD9\u662F\u4E00\u4E2A\u4E1C\u897F\u554A\u554A\u554A\u554A\u554A\u554A"
-  - B:11111
-  - "A:\u7B2C\u4E09\u6761"
+  - "A:charactertest_0:\u8FD9\u662F\u4E00\u4E2A\u4E1C\u897F\u554A\u554A\u554A\u554A\u554A\u554A"
+  - B:charactertest_0:11111
+  - "A:charactertest_0:\u7B2C\u4E09\u6761"

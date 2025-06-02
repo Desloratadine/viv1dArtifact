@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 /// <summary>
 /// 挂在note预制体上 激活后 移动 判定 销毁

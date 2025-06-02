@@ -1,5 +1,5 @@
 local dialogue={
-    {name = " ",text = "喵阿咪"}
+    {name = " ",img = "charactertest_0",pos="0",text = "喵阿咪"}
 
 }
 return dialogue

@@ -295,11 +295,14 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   inpoision: 0
   cat: {fileID: 2639218533254225182}
+  rb: {fileID: 0}
+  animator: {fileID: 0}
   Bag: {fileID: 0}
   isOpen: 0
   set: {fileID: 0}
   walksound: {fileID: 0}
   speed: 3
+  isDashing: 0
 --- !u!212 &7358647962558164949
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -39,8 +39,10 @@ public class Content : Node //对话节点
             {
                 LuaTable line = dialogueTable.Get<int, LuaTable>(i);
                 string name = line.Get<string, string>("name");
+                string img = line.Get<string, string>("img");
+                string imgPos=line.Get<string, string>("pos");
                 string text = line.Get<string, string>("text");
-                Dialogues.Add($"{name}:{text}");
+                Dialogues.Add($"{name}:{img}:{imgPos}:{text}");
             }
 
             Debug.Log($"成功加载{count}条对话");

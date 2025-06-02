@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 1946370832
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c9be2e7ff6c40b1246dc23f1fa082870
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7373ba50ac6c35e8e3b6b837ed057559
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d111cd119444825ade2b26e1bfb4b11f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 120
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Image/Character/charactertest_1.png
+- Assets/Prefabs/Line.prefab
+- Assets/Image/Character/charactertest_2.png
+- Assets/Image/Character/charactertest_0.png
+Dependencies: []

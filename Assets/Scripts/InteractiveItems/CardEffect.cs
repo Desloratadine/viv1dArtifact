@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using static UnityEditor.PlayerSettings.Switch;
 //相互作用，集中处理
 public enum CardFunc
 {
