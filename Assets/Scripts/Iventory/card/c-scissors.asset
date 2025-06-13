@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: c-scissors
   m_EditorClassIdentifier: 
   itemName: "\u526A\u5200"
-  itemInfo: "\u7528\u6765\u526A\u5F00\u4E1C\u897F\u3002"
+  itemInfo: "\u7528\n\u6765\u526A\u5F00\u4E1C\u897F\u3002"
   extraInfo: 
   ItemPrefab: {fileID: 1475913626777517089, guid: ffb626817077f5549a221d437cfeec51, type: 3}
   buffs: []

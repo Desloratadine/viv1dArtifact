@@ -30,7 +30,7 @@ public class CardPhysic : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject); // 可选：跨场景不销毁
+           // DontDestroyOnLoad(gameObject); // 可选：跨场景不销毁
         }
         else
         {

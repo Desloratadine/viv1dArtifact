@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb7f96ddaa54c84c8de2dbe64aade65, type: 3}
+  m_Name: p-hallu
+  m_EditorClassIdentifier: 
+  itemName: "\u5E7B\u89C9"
+  itemInfo: "\u524D\u7F6E\u6761\u4EF6\uFF1A\u7834\u7EFD\u88AB\u7784\u51C6\u5E76\u5BF9\u6297\u5931\u8D25\r\n\u5BF9\u6297\u6570\u503C\uFF1A\u4E0E\u6CBB\u75971\uFF1A1; 
+    \u4E0E\u653B\u51FB1\uFF1A1;  \u5BF9\u654C\u65B9\u4F7F\u7528\u65F6\u88AB\u89C6\u4E3A\u6700\u4F4E\u7EA7\u7684\u653B\u51FB\u5361\r\n\u6D88\u9664\u6761\u4EF6\uFF1A\u4E0E\u5DF1\u65B9\u6CBB\u7597/\u653B\u51FB\u5BF9\u6297\u5931\u8D25;\u5F53\u4F5C\u653B\u51FB\u4F7F\u7528\r\r"
+  extraInfo: 
+  ItemPrefab: {fileID: 1475913626777517089, guid: a4203d932b8051b4c85869b21347f8a6, type: 3}
+  buffs: []
+  BondCard: {fileID: 0}
+  CardFunc: 4
+  Held: 0

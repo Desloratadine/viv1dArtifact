@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdb7f96ddaa54c84c8de2dbe64aade65, type: 3}
-  m_Name: c-wound
+  m_Name: p-wound
   m_EditorClassIdentifier: 
   itemName: "\u4F24\u75D5"
-  itemInfo: "\u4F60\u53D7\u4F24\u4E86"
+  itemInfo: "\u524D\u7F6E\u6761\u4EF6\uFF1A\u6218\u6597\u5BF9\u6297\u5931\u8D25\r\n\u5BF9\u6297\u6570\u503C\uFF1A\u4E0E\u6CBB\u75971:1\r\n\u6D88\u9664\u6761\u4EF6\uFF1A\u4E0E\u5DF1\u65B9\u6CBB\u7597\u5BF9\u6297\u5931\u8D25\r"
   extraInfo: 
   ItemPrefab: {fileID: 1475913626777517089, guid: 24e0ff05541a7b04eb54e7c265ccf0c8, type: 3}
   buffs: []

@@ -16,7 +16,7 @@ public class Printer : MonoBehaviour
     }
     void Start()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     public void StartPrintText(string text, TextMeshProUGUI TextBlank)

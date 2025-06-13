@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +10,7 @@ public class CubeTrigger : MonoBehaviour
 {
 
     private Transform CubePos;
+
     void Start()
     {
         //UpdateTriggerState();
@@ -37,11 +39,21 @@ public class CubeTrigger : MonoBehaviour
         return false;
 
     }
-
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+            UIElementManager._instance.GetUIElement("方向事件").SetActive(true);        
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+            UIElementManager._instance.GetUIElement("方向事件").SetActive(false);
+    }
     //进入碰撞箱检查是否需要生成地块
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().isDashing && !Neighbour_is_Exist())
         {
             
@@ -54,6 +66,7 @@ public class CubeTrigger : MonoBehaviour
     //离开碰撞箱时通知计时器开始计时
     private void OnTriggerExit2D(Collider2D collision)
     {
+
         if (GenerateCube.instance.CubeList.Count != 1)
         {
             int index = GenerateCube.instance.CubeList.Count - 2;

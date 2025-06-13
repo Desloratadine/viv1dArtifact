@@ -7,7 +7,8 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using XNode;
 /// <summary>
-/// 在对话框，ui控件拖动赋值，选项按钮是动态生成的
+/// 在对话框，ui控件拖动赋值，选项按钮是动态生成的。
+/// 进入对话有两种方法，一种是直接EnterChapterGraph，另一种是从NPC实例中获取对话图并进入对话，
 /// </summary>
 public class DialogManager : MonoBehaviour
 {
@@ -48,27 +49,25 @@ public class DialogManager : MonoBehaviour
     //public Transform DialogGroup;
     //public GameObject NewDialog = null;
     #endregion
-    private void Awake()
+    private void Awake()//初始化所有图
     {
         if (instance == null) instance = new DialogManager();
         //if (NextLine == null) NextLine = new UnityEvent<Node>();
-
+        if(loader == null)
+        {
+            loader = new AssetBundleLoader("test");
+        }
         //GetGraph.AddListener(InitContentNode);
-        foreach(NodeGraph graph in graphs.NodeGraph)//初始化所有图
+        foreach(NodeGraph graph in graphs.NodeGraph)
         {
             Debug.Log("init_" + graph.name);
             InitContentNode(graph);
         }
 
     }
-    void Start()
+    void Start()//对话框显示默认章节
     {
-        if(loader == null)
-        {
-            loader = new AssetBundleLoader("test");
-        }
-
-        EnterChapter(FindGraph("default"));
+        EnterChapterGraph(FindGraph("default"));
         //OnPlaying();
         #region#旧的代码
         //Text = TextObject.GetComponentInChildren<TMP_Text>();
@@ -76,23 +75,7 @@ public class DialogManager : MonoBehaviour
         //ShowDialogs();
         #endregion
     }
-    public void ReceiveNPC(string NPC)//通过游戏实例绑定的图进入对话
-    {
-        foreach (NodeGraph graph in graphs.NodeGraph)
-        {
-            if (NPC == graph.name)
-            {
-                Debug.Log(NPC + "success attach to graph" + graph.name);
-                NodeGraph = graph;
-                EnterChapter(graph);
-            }
 
-        }
-    }
-    private void OnEnable()
-    {
-        //run(CurrentNode);//自动跳转到起始节点后的第一个对话节点并且播放第一条内容                                         
-    }
     
     void Update()
     {
@@ -102,12 +85,11 @@ public class DialogManager : MonoBehaviour
             }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnPlaying();
-
+            PlayNode();
         }
     }
-    //查找章节名字
-    public NodeGraph FindGraph(string GraphName)
+    
+    public NodeGraph FindGraph(string GraphName)//查找章节名字
     {
         foreach (NodeGraph graph in graphs.NodeGraph)
         {
@@ -119,20 +101,78 @@ public class DialogManager : MonoBehaviour
         Debug.Log("未找到" + GraphName);
         return null;
     }
-    public void EnterChapter(NodeGraph graph)//获取起始节点下的第一段对话，重置索引
+    public void EnterChapterGraph(NodeGraph graph)//获取起始节点下的第一段对话，重置索引
     {
         foreach (Transform child in buttonpanel.transform) Destroy(child.gameObject);
         CurrentNode = GetStartNode(graph);
         CurrentNode = GetNextNode(CurrentNode);
-        index = -1;
-        OnPlaying();
+        index = -1;//因为要跟数组同步，先设为-1，在CheckNodeUpdate方法还要+1，变成0
+        PlayNode();
     }
-    public void OnPlaying()
+    public void EnrerChapterByNPC(string NPC)//先查找实例绑定的图后进入指定的对话
     {
-        UpdateNode(CurrentNode);
+        EnterChapterGraph(FindGraph(NPC));
+        Debug.Log("success attach to graph" + NPC);
+    }
+
+    public void PlayNode()//特别莫名其妙
+    {
+        CheckNodeUpdate(CurrentNode);
         run(CurrentNode);
     }
-    
+     public void run(Node node)
+    {
+
+        if(node is Options option)//当前节点是选项
+        {
+            Debug.Log("button");
+            //生成按钮，
+            foreach (var choice in option.options)
+            {
+                GameObject button = Instantiate(optionbutton, buttonpanel.transform);
+                button.GetComponentInChildren<TextMeshProUGUI>().text = choice;
+                button.GetComponentInChildren<Button>().onClick.AddListener(() =>
+                    OnOptionSelected(option, button.GetComponentInChildren<Button>()));
+            }
+            return;
+        }
+        if(node is Content content)//当前节点是对话节点，加载当前对话之后更新索引
+        {
+
+            //提取对话列表
+            string line = content.Dialogues[index];
+            string[] parts = line.Split(':');
+            //string[] parts = line.Split(new[] {';'},2);
+            //if (parts.Length < 2)
+            //{
+            //    Debug.LogError($"因为冒号引起的分割错误:{line}");
+            //}
+            Name.text = parts[0];
+            CharacterImage[int.Parse(parts[2])].sprite = GetCharacterImg(parts[1]);
+            Text.text = parts[3];
+            Printer.instance.StartPrintText(Text.text,Text);
+            
+        }
+
+    }
+public void CheckNodeUpdate(Node node)//只当该节点是对话节点并且没有进行完时不更新节点
+    {
+      
+        if (node is Content content)
+        {
+            if(index>= content.Dialogues.Count-1)
+            {
+                CurrentNode = GetNextNode(CurrentNode);
+
+            }
+            else if (index < content.Dialogues.Count)
+            {
+                index++;
+            }
+
+        }
+
+    }
     public void InitContentNode(NodeGraph nodeGraph)
     {
         //foreach (Content content1 in nodeGraph.nodes)
@@ -182,47 +222,13 @@ public class DialogManager : MonoBehaviour
         if (selectedPort.IsConnected)
         {
             CurrentNode = selectedPort.Connection.node;
-            OnPlaying(); // 继续播放选定分支
+            PlayNode(); // 继续播放选定分支
         }
         // 清除旧按钮
         foreach (Transform child in buttonpanel.transform) Destroy(child.gameObject);
     }
     //播放对话内容
-    public void run(Node node)
-    {
-
-        if(node is Options option)//当前节点是选项
-        {
-            Debug.Log("button");
-            //生成按钮，
-            foreach (var choice in option.options)
-            {
-                GameObject button = Instantiate(optionbutton, buttonpanel.transform);
-                button.GetComponentInChildren<TextMeshProUGUI>().text = choice;
-                button.GetComponentInChildren<Button>().onClick.AddListener(() =>
-                    OnOptionSelected(option, button.GetComponentInChildren<Button>()));
-            }
-            return;
-        }
-        if(node is Content content)//当前节点是对话节点，加载当前对话之后更新索引
-        {
-
-            //提取对话列表
-            string line = content.Dialogues[index];
-            string[] parts = line.Split(':');
-            //string[] parts = line.Split(new[] {';'},2);
-            //if (parts.Length < 2)
-            //{
-            //    Debug.LogError($"因为冒号引起的分割错误:{line}");
-            //}
-            Name.text = parts[0];
-            CharacterImage[int.Parse(parts[2])].sprite = GetCharacterImg(parts[1]);
-            Text.text = parts[3];
-            Printer.instance.StartPrintText(Text.text,Text);
-            
-        }
-
-    }
+   
     public Sprite GetCharacterImg(string imgTag)
     {
         AssetBundle bundle = loader.GetBundle();
@@ -242,25 +248,7 @@ public class DialogManager : MonoBehaviour
         Debug.Log("没有找到对应的角色图片：" + imgTag);
         return null;
     }
-    public void UpdateNode(Node node)//只当该节点是对话节点并且没有进行完时不更新节点
-    {
-      
-        if (node is Content content)
-        {
-            if(index>= content.Dialogues.Count-1)
-            {
-                CurrentNode = GetNextNode(CurrentNode);
-
-            }
-            else if (index < content.Dialogues.Count)
-            {
-                index++;
-            }
-
-        }
-
-    }
-
+    
     #region#旧的分割和读取文本
     public void ReadText(Node node)   //行分割读取文本
     {

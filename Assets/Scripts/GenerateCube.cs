@@ -50,8 +50,8 @@ public class GenerateCube : MonoBehaviour
 
     public void genetare(Transform CubePos)
     {
-        //Debug.Log("cube is triggered.");
-        UpdateTriggerCount();
+        
+        UpdateTriggerCount();//已走步数+
 
         Order = CubePos.parent.parent.parent.GetComponentInChildren<SpriteRenderer>().sortingOrder;
 

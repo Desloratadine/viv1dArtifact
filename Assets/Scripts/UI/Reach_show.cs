@@ -24,7 +24,7 @@ public class Reach_show : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))        
         {
             GameObject blank = UIElementManager._instance.GetUIElement("对话框");
-            blank.GetComponentInChildren<DialogManager>().ReceiveNPC(NPCname);//对话事件入口
+            blank.GetComponentInChildren<DialogManager>().EnrerChapterByNPC(NPCname);//对话事件入口
             ChangeImagestate(true);
         }
     }
@@ -32,7 +32,7 @@ public class Reach_show : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
             GameObject blank = UIElementManager._instance.GetUIElement("对话框");
-            blank.GetComponentInChildren<DialogManager>().EnterChapter(blank.GetComponentInChildren<DialogManager>().FindGraph("default"));
+            blank.GetComponentInChildren<DialogManager>().EnterChapterGraph(blank.GetComponentInChildren<DialogManager>().FindGraph("default"));
         if (collision.gameObject.CompareTag("Player"))
         {
 

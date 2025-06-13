@@ -45,7 +45,8 @@ public class LevelChecker : MonoBehaviour
     //按已走步数检查距离下一层的步数
     public string NormalCheck(int CubeCount)
     {
-        foreach( var step in StepsDic)
+        LanternLight.instance.ChangeLight.Invoke();//提灯光效事件
+        foreach ( var step in StepsDic)
         {
             CurrentLevelName = step.Key.ToString();
 

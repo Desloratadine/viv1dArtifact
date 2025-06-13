@@ -57,7 +57,8 @@ public class IventoryMannage : MonoBehaviour
             card.GetComponentInChildren<AddInventory>().CanDrop= !inventoryBag.bagList[i].Bind;//移出卡槽的时候是否会掉落
             card.GetComponentInChildren<AddInventory>().CanFetch = inventoryBag.bagList[i].Exchangeable;//是否能在背包间交换
             card.GetComponentInChildren<AddInventory>().CanMove = !inventoryBag.bagList[i].Lock;
-            card.transform.parent = transform;
+            //card.transform.parent = transform;
+            card.transform.SetParent(transform);
             slots.Add(card);
 
         }

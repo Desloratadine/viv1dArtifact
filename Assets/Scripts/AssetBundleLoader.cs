@@ -46,7 +46,7 @@ public class AssetBundleLoader : MonoBehaviour
     {
         return assetBundle;
     }
-    public void FindAsset(string name)
+    public void FindAsset(string name)//只是用来测试的
     {
         foreach (string assetName in assetNames)
         {
@@ -54,10 +54,5 @@ public class AssetBundleLoader : MonoBehaviour
 
         }
         Debug.Log("结束查找");
-    }
-   
-    void Update()
-    {
-        
     }
 }

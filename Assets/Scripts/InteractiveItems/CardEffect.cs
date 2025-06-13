@@ -3,7 +3,10 @@ using UnityEngine.EventSystems;
 //相互作用，集中处理
 public enum CardFunc
 {
-    消耗品,合成工具, 钥匙, 锁孔,无
+    消耗品,合成工具, 钥匙, 锁孔, 
+    伤痕,混乱,破绽,恐惧,
+    攻击, 闪避, 治疗, 逃跑,
+    无
 }
 public static class KeyTypeExtensions//匹配功能
 {

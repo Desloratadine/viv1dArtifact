@@ -29,3 +29,5 @@ MonoBehaviour:
     prefab: {fileID: 6485188667376637536, guid: 221a83d9dbb2ce4488110ab30fe198c2, type: 3}
   - name: "\u73A9\u5BB6\u80CC\u5305"
     prefab: {fileID: 3058128597023644501, guid: 50390bf25d9e66e4eaaa0f09ae09bfd9, type: 3}
+  - name: "\u65B9\u5411\u4E8B\u4EF6"
+    prefab: {fileID: 8325785736582736262, guid: 8276e7a0adb83cb448d8e65037801ff0, type: 3}
